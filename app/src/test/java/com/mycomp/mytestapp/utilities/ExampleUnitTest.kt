@@ -21,7 +21,7 @@ package com.mycomp.mytestapp.utilities
 //            logDao = testAppDatabase.logDao()
 //
 //        } catch (e: java.lang.Exception) {
-//            Log.e("Test","Error", e)
+//            Logger.e("Test","Error", e)
 //        }
 //    }
 //
@@ -103,27 +103,27 @@ package com.mycomp.mytestapp.utilities
 //
 //    @Test
 //    fun `log i does not return null`() {
-//        assertNotNull("LogModel e has returned null", Log.i("LogModel", "Test", Exception("Test")))
+//        assertNotNull("LogModel e has returned null", Logger.i("LogModel", "Test", Exception("Test")))
 //    }
 //
 //    @Test
 //    fun `log e does not return null`() {
-//        assertNotNull("LogModel e has returned null", Log.e("LogModel", "Test", Exception("Test")))
+//        assertNotNull("LogModel e has returned null", Logger.e("LogModel", "Test", Exception("Test")))
 //    }
 //
 //    @Test
 //    fun `log v does not return null`() {
-//        assertNotNull("LogModel v has returned null", Log.v("LogModel", "Test", Exception("Test")))
+//        assertNotNull("LogModel v has returned null", Logger.v("LogModel", "Test", Exception("Test")))
 //    }
 //
 //    @Test
 //    fun `log d does not return null`() {
-//        assertNotNull("LogModel d has returned null", Log.d("LogModel", "Test", Exception("Test")))
+//        assertNotNull("LogModel d has returned null", Logger.d("LogModel", "Test", Exception("Test")))
 //    }
 //
 //    @Test
 //    fun `log w does not return null`() {
-//        assertNotNull("LogModel w has returned null", Log.w("LogModel", "Test", Exception("Test")))
+//        assertNotNull("LogModel w has returned null", Logger.w("LogModel", "Test", Exception("Test")))
 //    }
 //
 ////    @Test

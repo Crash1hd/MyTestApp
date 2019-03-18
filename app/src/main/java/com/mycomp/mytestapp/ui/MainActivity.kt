@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.mycomp.mytestapp.R
-import com.mycomp.mytestapp.utilities.log.Log
+import com.mycomp.mytestapp.utilities.log.Logger
 import com.mycomp.mytestapp.utilities.log.ui.LogViewModel
 import com.mycomp.mytestapp.utilities.log.ui.LogViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.*
@@ -36,7 +36,7 @@ class MainActivity : ScopedAppActivity(), KodeinAware {
         logViewModel = ViewModelProviders.of(this, logViewModelFactory)
             .get(LogViewModel::class.java)
 
-        Log.i(TAG, "$TAG onCreate was called")
+        Logger.i(TAG, "$TAG onCreate was called")
 
         bindUI()
     }

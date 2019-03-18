@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Application
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.mycomp.mytestapp.data.MYTESTAPPRoomDatabase
-import com.mycomp.mytestapp.utilities.log.Log
+import com.mycomp.mytestapp.utilities.log.Logger
 import com.mycomp.mytestapp.utilities.log.db.LogDao
 import com.mycomp.mytestapp.utilities.log.db.LogRepository
 import com.mycomp.mytestapp.utilities.log.db.LogRepositoryImpl
@@ -53,9 +53,9 @@ class MYTESTAPPApplication: Application(), KodeinAware {
         //logViewModel = logViewModelFactory.create(LogViewModel::class.java)
         val logRepository: LogRepository by instance()
 
-        Log.setLogRepository(logRepository)
+        Logger.setLogRepository(logRepository)
 
-        Log.purgeOldLogsGreaterThan(7)
+        Logger.purgeOldLogsGreaterThan(7)
 
     }
 }

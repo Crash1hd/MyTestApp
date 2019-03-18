@@ -5,8 +5,8 @@ import com.mycomp.mytestapp.BuildConfig
 import com.mycomp.mytestapp.utilities.log.db.LogModel
 import com.mycomp.mytestapp.utilities.log.db.LogRepository
 
-//Custom Log object
-object Log {
+//Custom Logger object
+object Logger {
 
     private lateinit var logRepo: LogRepository
 
@@ -45,7 +45,7 @@ object Log {
      * This gets an instance of the log repository
      * https://blog.indoorway.com/how-to-reproduce-dagger-functions-or-develop-your-own-di-in-kotlin-b8dfd5cdea0c
      * //Not Directly Related but great article all the same (difference between singletons and non-singletons)
-     * @param logRepo   The Log Repository
+     * @param logRepo   The Logger Repository
      */
     fun setLogRepository(logRepo: LogRepository) {
         this.logRepo = logRepo
@@ -69,7 +69,7 @@ object Log {
         )
 
     private fun insertIntoLogDatabase(log: LogModel) {
-        //Insert into Log DB
+        //Insert into Logger DB
         logRepo.upsert(log)
     }
 }

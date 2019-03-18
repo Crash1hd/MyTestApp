@@ -45,7 +45,7 @@ class LogRepositoryImpl(private val logDao: LogDao): LogRepository, CoroutineSco
     override fun deleteAllLogsOlderThan(xDays: Int) {
         launch(IO) {
             //val deletedLogs = logDao.deleteAllLogsOlderThan(xDays)
-            //Log.i("Log", "Purging $deletedLogs logs > $xDays days old")
+            //Logger.i("Logger", "Purging $deletedLogs logs > $xDays days old")
         }
     }
 

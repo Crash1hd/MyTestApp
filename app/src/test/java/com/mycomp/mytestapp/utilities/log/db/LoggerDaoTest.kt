@@ -26,7 +26,7 @@ import org.junit.runner.RunWith
  */
 //TODO:  Move these tests to instrumentation test (androidTest) once I learn how to have proper code coverage
 @RunWith(AndroidJUnit4::class)
-class LogDaoTest {
+class LoggerDaoTest {
 
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
@@ -189,14 +189,14 @@ class LogDaoTest {
                 testLog1.logID = 1
                 testLog1.msg = "Testing ABC"
                 logDao.upsert(testLog1)
-                assertThat("Updating Log Failed", LiveDataTestUtil.getValue(logDao.getLogByIDLive(1)).msg, `is`("Testing ABC"))
+                assertThat("Updating Logger Failed", LiveDataTestUtil.getValue(logDao.getLogByIDLive(1)).msg, `is`("Testing ABC"))
             }
         }
     }
 
 //    @Test
 //    @Throws(Exception::class)
-//    fun `on Updating List of Log Changes using upsert Check If All Logs Are Updated Correctly`() {
+//    fun `on Updating List of Logger Changes using upsert Check If All Logs Are Updated Correctly`() {
 //        runBlocking {
 //            withContext(IO) {
 //                val newDate = LocalDateTime.now().plusDays(1)
@@ -219,7 +219,7 @@ class LogDaoTest {
 
 //    @Test
 //    @Throws(Exception::class)
-//    fun `on Updating List of Log Changes using upsertAll Check If All Logs Are Updated Correctly`() {
+//    fun `on Updating List of Logger Changes using upsertAll Check If All Logs Are Updated Correctly`() {
 //        runBlocking {
 //            withContext(IO) {
 //                val newDate = LocalDateTime.now().plusDays(1)
@@ -253,7 +253,7 @@ class LogDaoTest {
 
                 logDao.deleteLog(testLog3)
 
-                assertThat("Log was not deleted correctly", LiveDataTestUtil.getValue(logDao.getLogByIDLive(3)), nullValue(null))
+                assertThat("Logger was not deleted correctly", LiveDataTestUtil.getValue(logDao.getLogByIDLive(3)), nullValue(null))
             }
         }
     }
@@ -271,7 +271,7 @@ class LogDaoTest {
 
                 val numDeleted = logDao.deleteLog(testLog3)
 
-                assertThat("Numbered returned from Log table deletion is not correct", numDeleted, `is`(1))
+                assertThat("Numbered returned from Logger table deletion is not correct", numDeleted, `is`(1))
             }
         }
     }
@@ -303,7 +303,7 @@ class LogDaoTest {
 
                 val numDeleted = logDao.deleteAll()
 
-                assertThat("Numbered returned from Log table deletion is not correct", numDeleted, `is`(5))
+                assertThat("Numbered returned from Logger table deletion is not correct", numDeleted, `is`(5))
             }
         }
     }
@@ -323,7 +323,7 @@ class LogDaoTest {
 //
 //                val numDeleted = logDao.deleteAllLogsOlderThan(7)
 //
-//                assertThat("Numbered returned from Log table deletion is not correct", numDeleted, `is`(3))
+//                assertThat("Numbered returned from Logger table deletion is not correct", numDeleted, `is`(3))
 //            }
 //        }
 //    }
@@ -346,7 +346,7 @@ class LogDaoTest {
 //                testLog4.logID = 4
 //                testLog5.logID = 5
 //                val notesListRemaining: List<LogModel> = listOf(testLog4, testLog5)
-//                assertThat("Numbered returned from Log table deletion is not correct", LiveDataTestUtil.getValue(logDao.getAllLiveLogs()), `is`(notesListRemaining))
+//                assertThat("Numbered returned from Logger table deletion is not correct", LiveDataTestUtil.getValue(logDao.getAllLiveLogs()), `is`(notesListRemaining))
 //            }
 //        }
 //    }

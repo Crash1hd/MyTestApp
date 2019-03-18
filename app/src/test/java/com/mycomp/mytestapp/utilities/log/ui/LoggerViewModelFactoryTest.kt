@@ -10,7 +10,7 @@ import org.junit.Test
 import org.mockito.Mock
 import org.mockito.MockitoAnnotations
 
-class LogViewModelFactoryTest {
+class LoggerViewModelFactoryTest {
     /***
      * https://proandroiddev.com/how-to-unit-test-livedata-and-lifecycle-components-8a0af41c90d9
      */

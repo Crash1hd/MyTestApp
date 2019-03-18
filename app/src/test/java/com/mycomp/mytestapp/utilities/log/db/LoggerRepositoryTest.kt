@@ -4,7 +4,7 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.mycomp.mytestapp.data.LiveDataTestUtil
-import com.mycomp.mytestapp.utilities.log.Log
+import com.mycomp.mytestapp.utilities.log.Logger
 import kotlinx.coroutines.runBlocking
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.CoreMatchers.isA
@@ -18,7 +18,7 @@ import org.mockito.Mockito.`when`
 import org.mockito.MockitoAnnotations
 
 @RunWith(AndroidJUnit4::class)
-class LogRepositoryTest {
+class LoggerRepositoryTest {
 
     /***
      * https://proandroiddev.com/how-to-unit-test-livedata-and-lifecycle-components-8a0af41c90d9
@@ -106,7 +106,7 @@ class LogRepositoryTest {
     fun `on Deletion Of 2 Logs Older Than 7 Days Returns Count Of 2`() {
         val xDays = 7
 
-        Log.setLogRepository(logRepository)
+        Logger.setLogRepository(logRepository)
 
         logRepository.deleteAllLogsOlderThan(xDays)
 
